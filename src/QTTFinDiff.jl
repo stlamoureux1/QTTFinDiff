@@ -1,5 +1,5 @@
 # TODO: 
-# 1. Code up Laplacian X
+# 1. Code up Laplacian
 # 2. Add options for boundary conditions
 # 3. Extend to higher dimensions
 # 4. See if there is a more efficient memory layout
@@ -132,12 +132,12 @@ function laplacian1d(sites::Vector{Index{Int}})
     L2_[1, 1, :, :] = I
     L2_[1, 2, :, :] = Zero
     L2_[1, 3, :, :] = Zero
-    L2_[2, 1, :, :] = J
-    L2_[2, 2, :, :] = J'
+    L2_[2, 1, :, :] = J'
+    L2_[2, 2, :, :] = J
     L2_[2, 3, :, :] = Zero
-    L2_[3, 1, :, :] = J'
+    L2_[3, 1, :, :] = J
     L2_[3, 2, :, :] = Zero
-    L2_[3, 3, :, :] = J
+    L2_[3, 3, :, :] = J'
 
     L3_[1, :, :] = I
     L3_[2, :, :] = J'
